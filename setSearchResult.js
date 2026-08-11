@@ -1,5 +1,5 @@
-import { contentAbout } from "Elements";
-import { stateCard } from "stateCard";
+import { contentAbout } from "./Elements.js";
+import { stateCard } from "./stateCard.js";
 
 const setSearchResult = (data) => {
   stateCard(data);
