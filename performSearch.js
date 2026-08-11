@@ -1,7 +1,7 @@
 
 // import { showErrorUI } from "./setCardErrorMassage";
-import setSearchResult from "setSearchResult.js";
-import { loadingState, stateCard } from "stateCard.js";
+import setSearchResult from "./setSearchResult.js";
+import { loadingState, stateCard } from "./stateCard.js";
 
 const USER_API = "https://api.github.com/search/users?q=";
 export const performSearch = (searchTerm, isUserSelected) => {
