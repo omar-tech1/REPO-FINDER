@@ -1,7 +1,7 @@
 // لو مفيش نتيجه او النتيجه فاضيه اعرض كارد الايرور
 // لو النتيجه موحوده اعرض كارد الترو 
 
-import { loaderSpinner } from "Elements";
+import { loaderSpinner } from "./Elements.js";
 
 
 export const falseResult= document.querySelector(".false-result");
