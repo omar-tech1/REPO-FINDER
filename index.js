@@ -13,7 +13,7 @@ import {
   usersElement,
   organizationsInputElement,
   contentAbout,
-} from "./scripts/Elements.js";
+} from "./Elements.js";
 import { performSearch } from "./performSearch.js";
 import { stateCard } from "./stateCard.js";
 import { usersInputElement } from "./userInputValue.js";
