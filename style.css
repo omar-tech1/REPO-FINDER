@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --color-p-nav: #797979;
+  --color-logo: #ebebeb;
+  --bg-color: #0d0d0d;
+  --red-color: #db2424;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h2,
+h1 {
+  font-family: "Inter", sans-serif;
+}
+/* nav bar */
+.nav {
+  width: 100%;
+  max-width: 1150px;
+  display: flex;
+  padding: 1.2rem 1rem;
+  margin: 0 auto;
+  color: var(--color-logo);
+  justify-content: space-between;
+  border-bottom: .5px solid #444444;
+}
+.nav .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.nav .logo h2 {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+.nav .logo span {
+  position: relative;
+  margin-left: 5px;
+  font-size: 1.5rem;
+  color: var(--red-color);
+  filter: drop-shadow(0 0 10px var(--red-color));
+}
+.nav .logo span::after {
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 34px;
+  width: 1px;
+  height: 15px;
+  background-color: #444444;
+}
+
+.nav .logo p {
+  color: var(--color-p-nav);
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-left: 2rem;
+}
+.nav .logo .logo-img {
+  color: var(--red-color);
+  filter: drop-shadow(0 0 10px var(--red-color));
+}
+.nav .square {
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  background-color: var(--red-color);
+  animation: colorGlow 1s ease-in-out infinite alternate;
+}
+@keyframes colorGlow {
+  0% {
+    background-color: #4d0000; /* اللون الأحمر الغامق */
+  }
+  100% {
+    background-color: #DB2424; /* لونك الأحمر الأصلي */
+  }
+}
+.nav .stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .stats p {
+  color: var(--red-color);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+/* section */
+.min-container {
+  flex: 1;
+  width: 100%;
+  position: relative; /* 👈 أساسي عشان نحدد مكان خلفية الصورة جواها */
+  background-color: var(--bg-color);
+}
+
+/* 👈 عملنا التعتيم (opacity) للصورة فقط من غير ما نأثر على المحتوى */
+.min-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/SL-072622-51930-14.jpg");
+  background-repeat: repeat;
+  background-size:contain;
+  background-position: center;
+  opacity: 0.10; /* 👈 حط نسبة الشفافية براحتك هنا للشبكة فقط */
+
+  z-index: 1; /* خلي الخلفية ورا */
+}
+
+/* 👈 ده بيضمن إن المحتوى يفضل فوق الصورة وواضح 100% */
+.min-container > * {
+  position: relative;
+  z-index: 2;
+}
+.container {
+  color: white;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.container .button{
+    margin-top: 3rem;
+    padding: 5px;
+    background-color:#181818;
+    max-width: max-content;
+    display: inline-flex;
+    border: 1px solid #333333; 
+
+}
+
+.container .button button {
+color: #757575;
+padding: 7px 35px;
+font-size: 12px;
+border: #0d0d0d;
+background-color:transparent ;
+border: 1px solid transparent;
+text-transform: uppercase;
+}
+.container .button button:not(.active):hover {
+  color: #ffffff;
+  border-color: #444444; /* بتظهر حافة رمادية خفيفة أكبر أو أوضح حول الزرار غير النشط */
+}
+.container .button  button.active{
+    background-color: var(--red-color);
+    color: white;
+}    
+/* form */
+.form{
+  margin-top: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ 
+}
+.form .input-group i{
+  color: #808080;
+  padding-left: 20px;
+  margin-right: 20px;
+}
+.form .input-group{
+flex: 1;
+display: flex;
+align-items: center;
+  border: none;
+  margin-right: 10px;
+  color: white;
+  border: 2px solid #333333;
+  background-color: #181818;
+  transition: .2s ease-in-out;
+}
+.form .input-group:focus-within{
+box-shadow: 0 0 15px rgba(219, 36, 36, 0.7);
+  border: #db2424 2px  solid;
+}
+.form .input-group input{
+  width: 100%;
+  padding: 18px 0;
+  font-size: 15px;
+  background-color: #181818;
+  color: white;
+border: none;
+outline: none;
+}
+.form .input-group input::placeholder{
+  font-size: 14px;
+  color: #535353;
+  letter-spacing: 2px;
+}
+.form button{
+  background-color: var(--red-color);
+  color: white;
+  letter-spacing: 1px;
+  padding: 15px 40px;
+  border: none;
+  transition: all .3s ease-in-out;
+}
+.form button:hover{
+  background-color: #C62121;
+  box-shadow: 0 0 15px rgba(219, 36, 36, 0.8);
+}
+.form button h2{
+  font-weight: 500;
+}
+/* first section */
+
+.info-result,.false-result{
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content-agtive{
+  display:none;
+}
+.info-result .terminal-icon,.false-result .terminal-icon{
+  color: #4B1414;
+  filter: drop-shadow(0 0 5px #4B1414);
+
+}
+.info-result h3,.false-result h3{
+  margin-top:2rem;
+ font-size: 17px;
+ font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.info-result p,.false-result p{
+  margin-top:.5rem ;
+  color: var(--color-p-nav);
+}
+/* true result */
+.true-result p{
+  margin: 1.5rem 0;
+  text-align: center;
+  align-items: center;
+  color: var(--red-color);
+    filter: drop-shadow(0 0 10px var(--red-color));
+}
+.true-result .content-about{
+  width: 1150px;
+  padding: 0 10px;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3,1fr);
+  color: white;
+}
+.true-result .content-about img{
+  width: 100px;
+  border-radius: 50%;
+ border: 2px solid #333333;
+}
+.true-result .content-about img:hover{
+ border: 2px solid var(--red-color);
+  box-shadow: 0 0 15px rgba(219, 36, 36, 0.8);
+  transition: all .2s ease-in-out;
+}
+.true-result .content-about .col{
+  padding: 3rem 2rem;
+   background-color: #181818;
+   border: 1px solid #222222;
+   position: relative;
+   transition: all 0.3s ease;
+}
+.true-result .content-about .col:hover{
+border-color: var(--red-color);
+  box-shadow: 0 0 12px rgba(219, 36, 36, 0.25);
+  scale: 1.01;
+}
+.true-result .content-about .col::before,
+.true-result .content-about .col::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0; /* مخفية في الوضع الطبيعي */
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* الزاوية العلوية اليسرى والفي السفلى اليمنى */
+.true-result .content-about .col::before {
+  top: -3px;
+  left: -3px;
+  border-top: 2px solid var(--red-color);
+  border-left: 2px solid var(--red-color);
+}
+
+/* الزاوية العلوية اليمنى والسفلى اليسرى */
+.true-result .content-about .col::after {
+  bottom: -3px;
+  right: -3px;
+  border-bottom: 2px solid var(--red-color);
+  border-right: 2px solid var(--red-color);
+}
+
+/* إظهار الزوايا عند الـ Hover */
+.true-result .content-about .col:hover::before,
+.true-result .content-about .col:hover::after {
+  opacity: 1;
+}
+/* false result */
+.false-result h3{
+color: white;
+} 
+.false-result p{
+  text-transform: uppercase;
+  font-size: .8rem;
+}
+.false-result .false-img svg{
+color: #000;
+}
+/* loader spinner */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+.loader-spinner {
+  width: 42px;
+  height: 42px;
+  border: 5px solid #333;
+  border-top: 5px solid #e52525;
+  border-right: 5px solid #e52525;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loader p {
+  margin-top: 40px;
+  color: #e52525;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  animation: blink 1s infinite;
+}
+.loader-spinner-of{
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+@media (max-width:500px) {
+.nav{
+  max-width: 100%;
+}
+  .nav .logo p ,.nav .stats p{
+    display: none;
+  }
+  .form{
+    margin-top: .5rem;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  .container .button{
+        margin-left: 1rem;
+  }
+.true-result .content-about{
+  max-width: 100%;
+  grid-template-columns: 1fr;
+  padding: 0 25px;
+}
+}
