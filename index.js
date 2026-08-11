@@ -13,10 +13,10 @@ import {
   usersElement,
   organizationsInputElement,
   contentAbout,
-} from "/Elements.js";
-import { performSearch } from "/performSearch.js";
-import { stateCard } from "/stateCard.js";
-import { usersInputElement } from "/userInputValue.js";
+} from "./scripts/Elements.js";
+import { performSearch } from "./scripts/performSearch.js";
+import { stateCard } from "./scripts/stateCard.js";
+import { usersInputElement } from "./scripts/userInputValue.js";
 
 
 organizationsInputElement.addEventListener("click", () => {
